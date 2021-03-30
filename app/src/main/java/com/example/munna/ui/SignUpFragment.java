@@ -57,7 +57,7 @@ public class SignUpFragment extends Fragment {
         //firebase Instance
         auth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference().child(getString(R.string.db_users));
+        databaseReference = firebaseDatabase.getReference();
         //View Instances
         signUpButton = root.findViewById(R.id.signUpButton);
         email = root.findViewById(R.id.email_input_signUp);
@@ -136,7 +136,7 @@ public class SignUpFragment extends Fragment {
     private void saveUser(String email) {
         String userID = auth.getCurrentUser().getUid();
         User user = new User(userID,email);
-        databaseReference.child(userID).setValue(user);
+        databaseReference.child("Users").child(userID).setValue(user);
     }
 
     public boolean passwordRequirement(String s) {

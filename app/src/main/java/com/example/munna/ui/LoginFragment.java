@@ -101,6 +101,12 @@ public class LoginFragment extends Fragment {
             }
         });
     }
+    @Override
+    public void onResume() {
+        super.onResume();
+        FirebaseUser user = auth.getCurrentUser();
+        updateUI(user);
+    }
 
     private void updateUI(FirebaseUser user) {
         if(user != null){
