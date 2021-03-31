@@ -10,22 +10,25 @@
         android:id="@+id/profile_image"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
         android:src="@drawable/image_demo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/user_greeting"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Hi, Elias Welcome"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="Hi, Elias! Welcome Back"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
@@ -33,10 +36,11 @@
         android:id="@+id/balance_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="24dp"
         android:text="Balance"
         android:textColor="#000000"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_greeting" />
 
@@ -45,11 +49,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
         android:text="#100,000"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/balance_txt" />
+        app:layout_constraintBottom_toBottomOf="@+id/balance_txt"
+        app:layout_constraintStart_toEndOf="@+id/balance_txt"
+        app:layout_constraintTop_toTopOf="@+id/balance_txt" />
 
+    <Button
+        android:id="@+id/top_up"
+        android:layout_width="111dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="88dp"
+        android:text="Top up"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amount_txt" />
+
+    <Button
+        android:id="@+id/transaction_btn"
+        android:layout_width="111dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="60dp"
+        android:text="Transaction"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_up" />
+
+    <Button
+        android:id="@+id/banking_btn"
+        android:layout_width="111dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="212dp"
+        android:text="Banking"
+        app:layout_constraintBottom_toBottomOf="@+id/transaction_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/transaction_btn" />
+
+    <Button
+        android:id="@+id/bills_btn"
+        android:layout_width="111dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="224dp"
+        android:text="Pay Bills"
+        app:layout_constraintBottom_toBottomOf="@+id/top_up"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/top_up" />
 </androidx.constraintlayout.widget.ConstraintLayout>
