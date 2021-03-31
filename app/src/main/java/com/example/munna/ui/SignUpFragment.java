@@ -36,11 +36,10 @@ import java.util.Objects;
 
 public class SignUpFragment extends Fragment {
     private FirebaseAuth auth;
-    private FirebaseAuth.AuthStateListener authStateListener;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private ProgressBar progressBar;
-    private TextInputEditText email,password,confirmedPassword,bvnText;
+    private TextInputEditText email,password,confirmedPassword;
     private TextInputLayout passwordLayout,confirmedPasswordLayout;
     private Button signUpButton;
     private static final String TAG = "signUp";
@@ -62,7 +61,6 @@ public class SignUpFragment extends Fragment {
         signUpButton = root.findViewById(R.id.signUpButton);
         email = root.findViewById(R.id.email_input_signUp);
         confirmedPassword = root.findViewById(R.id.confirm_password_input_signUp);
-        bvnText = root.findViewById(R.id.bvn_input_signUp);
         password = root.findViewById(R.id.password_input_signUp);
         passwordLayout = root.findViewById(R.id.password_input_layout_signUp);
         confirmedPasswordLayout = root.findViewById(R.id.confirm_password_input_layout_signUp);
@@ -76,10 +74,9 @@ public class SignUpFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         signUpButton.setOnClickListener(view1 -> {
             String emailText = email.getText().toString();
-            String bvnTxt = bvnText.getText().toString();
             String passwordText = password.getText().toString();
             String confirmedPasswordText = confirmedPassword.getText().toString();
-            if (!TextUtils.isEmpty(emailText) && !TextUtils.isEmpty(bvnTxt)
+            if (!TextUtils.isEmpty(emailText)
                     && !TextUtils.isEmpty(passwordText) && !TextUtils.isEmpty(confirmedPasswordText))
             {
                 if (passwordRequirement(passwordText)){

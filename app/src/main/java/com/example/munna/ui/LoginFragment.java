@@ -79,7 +79,6 @@ public class LoginFragment extends Fragment {
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                    updateUI(null);
                                     progressBar.setVisibility(View.GONE);
                                     requireActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                                     Toast.makeText(getContext(), "Authentication failed.",
@@ -100,12 +99,6 @@ public class LoginFragment extends Fragment {
                 Snackbar.make(view1, "Fill all fields", Snackbar.LENGTH_LONG).show();
             }
         });
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
-        FirebaseUser user = auth.getCurrentUser();
-        updateUI(user);
     }
 
     private void updateUI(FirebaseUser user) {
